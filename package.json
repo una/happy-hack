@@ -1,0 +1,31 @@
+{
+  "name": "happy-hack",
+  "version": "0.0.0",
+  "description": "Bringing joy through code. Austin's Happy Hack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/una/happy-hack"
+  },
+  "author": "Una Kravets",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/una/happy-hack/issues"
+  },
+  "homepage": "https://github.com/una/happy-hack",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "swig": "^1.4.2",
+    "browser-sync": "^1.3.7",
+    "gulp-autoprefixer": "1.0.0",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-imagemin": "^2.0.0",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^0.7.3",
+    "gulp-scss-lint": "^0.1.4"
+  }
+}

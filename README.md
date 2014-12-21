@@ -14,7 +14,7 @@ npm install
 
 ## Running the app
 ```
-DEBUG=happy-hack ./bin/www
+gulp
 ```
 
-Listen on port 3200
+Listen on port 5000

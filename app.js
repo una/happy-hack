@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var swig = require('swig');
+var people;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -12,7 +14,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -56,5 +58,26 @@ app.use(function(err, req, res, next) {
     });
 });
 
+//SWIG STUFF
+// This is where all the magic happens!
+app.engine('html', swig.renderFile);
+
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
+
+// Swig will cache templates for you, but you can disable
+// that and use Express's caching instead, if you like:
+app.set('view cache', false);
+// To disable Swig's cache, do the following:
+swig.setDefaults({ cache: false });
+// NOTE: You should always cache templates in a production environment.
+// Don't leave both of these to `false` in production!
+
+app.get('/', function (req, res) {
+  res.render('index', { /* template locals context */ });
+});
+
+
+//END SWIG
 
 module.exports = app;
